@@ -1,0 +1,287 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="...">
+    <!--?-->
+    <meta name="description" content="...">
+    <!--?-->
+    <meta property="og:url" content="{{ request.path }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Спортивна зала GRIFF">
+    <!--?-->
+    <meta property="og:description" content="...">
+    <!--?-->
+    <meta property="og:image" content="{% static 'image/logo-bird.png' %}">
+    <!--?-->
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:width" content="1200">
+    <link rel="shortcut icon" href="{% static 'image/logo-bird.png' %}" type="image/x-icon">
+    <!--?-->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>Спортивна зала GRIFF</title>
+    <!--?-->
+</head>
+
+<body>
+    <div id="navMobile">
+        <div class="wrapper">
+            <div id="exit">
+                <div class="stick"></div>
+                <div class="stick"></div>
+            </div>
+            <a href="#why">Про клуб</a>
+            <a href="#bot">Тренер в телеграм</a>
+            <a href="#coaches">Тренери</a>
+            <a href="#mission">Місія</a>
+            <a href="#directs">Фітнес напрямки</a>
+            <a href="#signup-form">Реєстрація</a>
+        </div>
+    </div>
+
+    <a href="#header" class="top-button">
+        <img src="{% static 'image/left.svg' %}" alt="top-arrow">
+    </a>
+
+    <header id="header">
+        <div class="dark"></div>
+        <div class="wrapper">
+            <nav>
+                <div class="logo">
+                    <img src="{% static 'image/logo-griff.png' %}" alt="logo" class="logo-griff">
+                    <img src="{% static 'image/logo-bird.png' %}" alt="logo" class="logo-bird">
+                </div>
+                <div class="links">
+                    <a href="#why">Про клуб</a>
+                    <a href="#bot">Тренер в телеграм</a>
+                    <a href="#coaches">Тренери</a>
+                    <a href="#mission">Місія</a>
+                    <a href="#directs">Фітнес напрямки</a>
+                    <a href="#signup-form">Реєстрація</a>
+                </div>
+                <div id="hamburger" class="hamburger">
+                    <div class="stick"></div>
+                    <div class="stick"></div>
+                    <div class="stick"></div>
+                </div>
+                <div class="contacts">
+                    <p>Суми, Пр. Курсткий, 30/3</p>
+                    <a href="tel:0992705787" class="yellow-block">+38 099 270 57 87</a>
+                </div>
+            </nav>
+            <h1>СТВОРИ ТІЛО <span>СВОЄЇ МРІЇ</span></h1>
+            <h3>Перше тренування безкоштовно</h3>
+            <a href="#signup-form" class="yellow-block signup btn-event">РЕЄСТРАЦІЯ</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="bot" class="bot">
+            <div class="wrapper">
+                <h2 class="title">ВІРТУАЛЬНИЙ ТРЕНЕР <span>GRIFF</span> В ТЕЛЕГРАМ</h2>
+                <p>Ми створили бот, який покроково дозволить вам створити рельєф тіла для певної мети. Оберіть в меню
+                    атбота напрямок і бот продемонструє - як правильно виконувати вправи, скількі і в якій
+                    послідовності. Ми впевнені, що такий бот суттєво замінить роботу персонального тренера. В разі, якщо
+                    ви хочете особистого супровода наших тренерів, скористуйтесь такою можливістью. Всі наші тренери
+                    мають високу фахову підготовку та нагороди.</p>
+                <div class="owl-two owl-carousel manual">
+                    <div class="step">
+                        <div class="num">1</div>
+                        <img src="{% static 'image/hand.png' %}" alt="hand">
+                        <p>Приходь в зал с<br>телефоном</p>
+                    </div>
+                    <div class="step">
+                        <div class="num">2</div>
+                        <img src="{% static 'image/qr-code.png' %}" alt="qr-code">
+                        <p>Відскануй<br>QR код</p>
+                    </div>
+                    <div class="step">
+                        <div class="num">3</div>
+                        <img src="{% static 'image/hand.png' %}" alt="bot">
+                        <p>Почни<br>тренування</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why" class="why">
+            <div class="pink"></div>
+            <div class="wrapper">
+                <h2 class="title">Чому обирають <span>Griff</span></h2>
+                <div class="why-container">
+                    <div class="content">
+                        <img src="{% static 'image/icon-target.svg' %}" alt="icon-target">
+                        <p>Великі приміщення
+                            Тренажорний зал - 900 кв. м
+                            Фітнес зал 80 кв. м
+                        </p>
+                    </div>
+                    <div class="content">
+                        <img src="{% static 'image/icon-target.svg' %}" alt="icon-target">
+                        <p>Окрема кардіо зона - 6 бігових доріжек, орбітрек, спінбайк.
+                        </p>
+                    </div>
+                    <div class="content">
+                        <img src="{% static 'image/icon-target.svg' %}" alt="icon-target">
+                        <p>Масажний кабінет, інфрачервона сауна.
+                        </p>
+                    </div>
+                    <div class="content">
+                        <img src="{% static 'image/icon-target.svg' %}" alt="icon-target">
+                        <p>Кросфіт зона з санками, греблей, покришкою і кувалдой, 2 канати, 3 боксерські груші та інший
+                            інвентар.
+                        </p>
+                    </div>
+                    <div class="content">
+                        <img src="{% static 'image/icon-target.svg' %}" alt="icon-target">
+                        <p>50 тренажерів на всі групи мишок;
+                            2 гантельні ряди
+                            від 1 до 10 і від 11 до 50 кг
+                        </p>
+                    </div>
+                    <div class="content">
+                        <img src="{% static 'image/icon-target.svg' %}" alt="icon-target">
+                        <p>2 просторі роздягальні та 9 душових
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="coaches" class="coaches">
+            <div class="wrapper">
+                <h2 class="title">Наші тренери</h2>
+                <div class="owl-one owl-carousel owl-theme">
+                    {% for c in coaches %}
+                    <div class="item coach">
+                        <div class="coach-photo" style="background-image: url('{{ c.image.url }}');">
+                            <div class="hover-group">
+                                <h4>Освіта</h4>
+                                <p>{{ c.education }}</p>
+                                <h4>Здобутки</h4>
+                                <p>{{ c.achievements }}</p>
+                            </div>
+                        </div>
+                        <p>{{ c.caption }}</p>
+                    </div>
+                    {% endfor %}
+                    {% if not coaches %}
+                    <p>Тренери відсутні</p>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+        <section id="mission" class="mission">
+            <div class="wrapper">
+                <h2 class="title">Місія <span>Griff</span></h2>
+                <div class="mission-container">
+                    <div class="p-container">
+                        <p>Головна мета GRIF створити простір, де ви зможете створити тіло своєї мрії, знайти родину
+                            спортсменів, які будуть вас мотивувати на шляху.</p>
+                        <p>Ми також ставимо за мету розвивати сучасні напрямки активностей, які так подобаються різним
+                            віковим групам - це і зумба, йога, пілатес, стречінг.</p>
+                        <p>В нашому клубі ми зібрали зуркову команду тренерів, що нададуть вам консультації і щодо
+                            харчування і одягу.</p>
+                    </div>
+                    <img src="{% static 'image/ruslan-ira.png' %}" alt="ruslan-ira">
+                </div>
+            </div>
+        </section>
+
+        <section id="directs" class="directs">
+            <div class="wrapper">
+                <h2 class="title">Напрямки клубу <span>Griff</span></h2>
+                <div class="all-directs">
+                    {% for d in directions %}
+                        <div class="direction">
+                            <div style="background-image: url('{{ d.image.url }}')"></div>
+                            <p>{{ d.name }}</p>
+                        </div>
+                        <!-- <div class="direction-desc">
+                            <div class="wrapper">
+                                <div style="background-image: url('{{ d.image.url }}')"></div>
+                                <p>{{ d.description }}</p>
+                            </div>
+                        </div> -->
+                    {% endfor %}
+                    {% if not directions %}
+                        <p>Напрямки клубу відсутні</p>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+        <section id="signup-form" class="signup-form">
+            <div class="pink"></div>
+            <div class="content">
+                <h2 class="title">РЕЄСТРАЦІЯ НА БЕЗКОШКОВНЕ ЗАНЯТТЯ В <span>GRIFF</span></h2>
+                <input type="text" placeholder="Ваше ім'я">
+                <input type="text" placeholder="Телефон">
+                <a class="yellow-block btn-event">РЕЄСТРАЦІЯ</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrapper">
+            <div class="logo">
+                <img src="{% static 'image/logo-griff.png' %}" alt="logo" class="logo-griff">
+                <img src="{% static 'image/logo-bird.png' %}" alt="logo" class="logo-bird">
+                <p>СТВОРИ ТІЛО СВОЄЇ МРІЇ</p>
+            </div>
+            <div class="time">
+                <h3>МИ ПРАЦЮЄМО</h3>
+                <table>
+                    <tr>
+                        <td>Пн-Пт:</td>
+                        <td>8-20</td>
+                    </tr>
+                    <tr>
+                        <td>Субота:</td>
+                        <td>8-18</td>
+                    </tr>
+                    <tr>
+                        <td>Неділя:</td>
+                        <td>вихідний</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="social-media">
+                <h3>МИ В СОЦ МЕРЕЖАХ</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/griff_sportclub/?utm_medium=copy_link" target="_blank">
+                        <img src="{% static 'image/instagram.png' %}" alt="instagram logo">
+                    </a>
+                    <a href="https://www.facebook.com/groups/GRIFF.SUMY.SPORT/" target="_blank">
+                        <img src="{% static 'image/facebook.png' %}" alt="facebook logo">
+                    </a>
+                    <a href="https://www.tiktok.com/@griff_sportclub" target="_blank">
+                        <img src="{% static 'image/tiktok.png' %}" alt="tiktok logo">
+                    </a>
+                </div>
+            </div>
+            <div class="contacts">
+                <h3>КОНТАКТИ</h3>
+                <div class="contacts-container">
+                    <p>Пр.Курський, 30/3</p>
+                    <p>+38 099 270 57 87</p>
+                    <p>hello@trener.sumy.ua</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/jquery.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/hamburger.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/index.js' %}" type="text/javascript"></script>
+</body>
+
+</html>

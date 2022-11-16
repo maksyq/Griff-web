@@ -1,0 +1,1011 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+@font-face {
+    font-family: 'Reforma Grotesk';
+    src: url('/static/font/ReformaGroteskBold.eot');
+    src: local('Reforma Grotesk Bold'), local('/static/font/ReformaGroteskBold'),
+        url('/static/font/ReformaGroteskBold.eot?#iefix') format('embedded-opentype'),
+        url('/static/font/ReformaGroteskBold.woff2') format('woff2'),
+        url('/static/font/ReformaGroteskBold.woff') format('woff'),
+        url('/static/font/ReformaGroteskBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Reforma Grotesk Demi';
+    src: url('/static/font/ReformaGroteskDemi.eot');
+    src: local('Reforma Grotesk Demi'), local('/static/font/ReformaGroteskDemi'),
+        url('/static/font/ReformaGroteskDemi.eot?#iefix') format('embedded-opentype'),
+        url('/static/font/ReformaGroteskDemi.woff2') format('woff2'),
+        url('/static/font/ReformaGroteskDemi.woff') format('woff'),
+        url('/static/font/ReformaGroteskDemi.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Reforma Grotesk';
+    src: url('/static/font/ReformaGroteskMedium.eot');
+    src: local('Reforma Grotesk Medium'), local('/static/font/ReformaGroteskMedium'),
+        url('/static/font/ReformaGroteskMedium.eot?#iefix') format('embedded-opentype'),
+        url('/static/font/ReformaGroteskMedium.woff2') format('woff2'),
+        url('/static/font/ReformaGroteskMedium.woff') format('woff'),
+        url('/static/font/ReformaGroteskMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Reforma Grotesk';
+    src: url('/static/font/ReformaGroteskLight.eot');
+    src: local('Reforma Grotesk Light'), local('/static/font/ReformaGroteskLight'),
+        url('/static/font/ReformaGroteskLight.eot?#iefix') format('embedded-opentype'),
+        url('/static/font/ReformaGroteskLight.woff2') format('woff2'),
+        url('/static/font/ReformaGroteskLight.woff') format('woff'),
+        url('/static/font/ReformaGroteskLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+:root {
+    --yellow: #ffb800;
+    --white: #fff;
+    --black: #000;
+    --main-title-size: 7rem;
+    --title-size: 4rem;
+    --ord-size: 2rem;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+
+body {
+    font-family: "Reforma Grotesk";
+    color: var(--white);
+    user-select: none;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 2550, 0.8);
+}
+
+
+.top-button {
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    right: 65px;
+    bottom: 65px;
+    background-color: rgba(51, 51, 51, 0.5);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    z-index: 1000;
+    transition: all .2s ease-in-out;
+}
+.top-button img{
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%) rotateZ(90deg);
+    width: 50%;
+    height: 50%;
+    z-index: inherit;
+}
+.top-button:hover {
+    background-color: rgba(51, 51, 51, 0.8);
+}
+
+
+#navMobile {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--black);
+    z-index: 999;
+    transition: right .3s ease-in-out;
+}
+#navMobile .wrapper > a {
+    display: block;
+    font-size: var(--title-size);
+    margin-bottom: 10px;
+}
+#exit {
+    position: absolute;
+    top: 35px;
+    right: 65px;
+    width: 70px;
+    height: 70px;
+}
+#exit .stick {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#exit .stick:first-child {
+    transform-origin: center;
+    transform: rotate(45deg);
+}
+#exit .stick:last-child {
+    transform-origin: center;
+    transform: rotate(-45deg);
+}
+
+header {
+    position: relative;
+    height: 800px;
+    font-weight: 500;
+    background-image: url("/static/image/background.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+header > .dark {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%; width: 100%;
+    background-color: #000;
+    opacity: 0.7;
+}
+header > .wrapper {
+    position: relative;
+}
+header nav {
+    display: flex;
+    margin-bottom: 10%;
+    padding-top: 25px;
+    justify-content: space-between;
+    align-items: center;
+}
+header nav .logo,
+header nav .contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+header nav .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70px;
+    height: 70px;
+}
+header nav .links > a {
+    font-family: 'Reforma Grotesk Demi';
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    margin-right: 20px;
+    font-size: 1.75rem;
+    transition: color .2s ease-in-out;
+}
+header nav .links > a:hover {
+    color: var(--yellow);
+}
+header nav .contacts {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+    gap: 18px;
+}
+header nav .contacts .yellow-block {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+}
+header nav .contacts p {
+    font-family: 'Reforma Grotesk Demi';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+}
+header h1 {
+    font-size: var(--main-title-size);
+    font-weight: 400;
+}
+header h1 span {
+    color: var(--yellow);
+}
+header h3 {
+    font-family: 'Ubuntu';
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin: 0px 0 30px 0;
+    letter-spacing: 1.5px;
+}
+header .signup {
+    font-style: normal;
+    font-weight: 400;
+    padding: 10px 50px;
+    font-size: 2.5rem;
+}
+
+
+.bot {
+    background-color: var(--black);
+}
+.bot .wrapper > p {
+    font-family: 'Ubuntu';
+    font-size: 1.25rem;
+    margin-bottom: 50px;
+    line-height: 1.5;
+}
+.bot .manual {
+    padding-bottom: 50px;
+}
+.bot .manual .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bot .manual .step .num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.5rem; width: 3.5rem;
+    margin-bottom: 25px;
+    border: 3px solid white;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+.bot .manual .step img {
+    width: 224px;
+    height: 227px;
+    border-radius: 32px;
+    margin-bottom: 25px;
+}
+.bot .manual .step p {
+    font-family: 'Ubuntu';
+    text-align: center;
+    font-size: var(--ord-size);
+}
+
+
+.why {
+    background-image: url("/static/image/gym2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.why h2 {
+    position: relative;
+}
+.why .why-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.why .content {
+    display: flex;
+    align-items: center;
+    width: 450px;
+    height: 135px;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.why .content p {
+    font-family: 'Roboto Condensed';
+    font-size: var(--ord-size);
+}
+.why .content img {
+    max-width: 24px;
+    max-height: 26px;
+}
+.why .pink {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%; width: 100%;
+    background-color: rgba(82,29,45, 0.70);
+}
+
+
+.coaches {
+    background-color: var(--black);
+}
+.coaches {
+    padding-bottom: 50px;
+}
+.coaches .coaches-container {
+    display: flex;
+    justify-content: space-between;
+}
+.coaches .coach {
+    width: 20%;
+}
+.coaches .coach .hover-group {
+    position: absolute;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+}
+.coaches .coach-photo:hover .hover-group {
+    top: 0;
+    opacity: 1;
+    backdrop-filter: blur(5px);
+}
+.coaches .coach .hover-group h4 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 10px 0;
+}
+.coaches .coach .hover-group p {
+    font-family: 'Ubuntu';
+    font-size: 1.2rem;
+}
+.coaches .coach .coach-photo {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    width: 300px;
+    height: 500px;
+    overflow: hidden;
+}
+.coaches .coach > p {
+    font-size: var(--ord-size);
+    text-align: center;
+    width: 300px;
+    text-transform: uppercase;
+    margin-top: 25px;
+}
+
+
+.mission {
+    background-color: rgb(30, 30, 30);
+    /* box-shadow: inset 0 0 20px #000; */
+}
+.mission .mission-container {
+    display: flex;
+    justify-content: space-between;
+}
+.mission .p-container {
+    padding: 40px;
+    width: 50%;
+
+}
+.mission .p-container > p{
+    font-size: var(--ord-size);
+    margin-bottom: 40px;
+}
+
+
+.directs {
+    background-color: var(--black);
+}
+.all-directs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.all-directs > .direction {
+    margin: 20px 0;
+    text-align: center;
+    cursor: pointer;
+}
+.all-directs > .direction > div {
+    width: 340px;
+    height: 290px;
+    background-size: 350px;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(90%);
+    transition: all .2s ease-in-out;
+}
+.all-directs > .direction:hover > div{
+    background-size: 400px;
+    filter: brightness(100%);
+
+}
+.all-directs > .direction p {
+    text-transform: uppercase;
+    font-size: var(--ord-size);
+    margin-top: 15px;
+}
+
+
+.signup-form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+    padding: 50px;
+    background-image: url("/static/image/gym.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.signup-form .pink {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%; width: 100%;
+    background-color: #c94270;
+    opacity: 0.85;
+}
+.signup-form .content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.signup-form .title {
+    margin-bottom: 100px;
+}
+.signup-form input {
+    font-size: var(--ord-size);
+    padding: 5px 15px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    width: 50%;
+}
+.signup-form .yellow-block {
+    padding: 10px 40px;
+    font-size: var(--ord-size);
+}
+
+
+footer {
+    background-color: #71223D;
+}
+footer .wrapper {
+    display: flex;
+}
+footer .wrapper > div {
+    width: 25%;
+    padding: 0 25px;
+}
+footer h3{
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+footer .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer .logo > p {
+    font-size: var(--ord-size);
+}
+footer .time table {
+    font-size: var(--ord-size);
+    width: 100%;
+    margin-top: 40px;
+}
+footer .social-icons{
+    margin-top: 40px;
+}
+footer .social-icons img{
+    margin-bottom: 15px;
+    margin-right: 30px;
+}
+footer .contacts-container {
+    margin-top: 40px;
+}
+footer .contacts-container > p{
+    font-size: var(--ord-size);
+    margin-bottom: 20px;
+}
+
+
+.owl-nav {
+    text-align: right;
+    margin-top: 40px;
+    position: relative;
+}
+.owl-nav > button {
+    width: 48px;
+}
+.owl-dots {
+    text-align: center;
+}
+.owl-dots > button {
+    background-image: url('/static/image/icon-target.svg') !important;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0) !important;
+    margin-right: 15px;
+    border-radius: 50%;
+    width: 24px;
+    height: 26px;
+    transition: box-shadow .3s ease-in-out;
+}
+.owl-dots .active {
+    box-shadow: 0 0 0 2px var(--white) !important;
+}
+
+
+
+footer,
+section{
+    padding: 100px 0;
+}
+
+
+.btn-event:hover {
+    color: #71223d;
+}
+.btn-event:active {
+    background-color: #d39700;
+}
+
+
+.stick {
+    width: 100%;
+    height: 4px;
+    background-color: var(--yellow);
+}
+
+
+.title {
+    margin-bottom: 50px;
+    font-size: var(--title-size);
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.title span {
+    color: var(--yellow);
+}
+
+
+.yellow-block {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 16px;
+    background: var(--yellow);
+}
+
+
+.wrapper {
+    margin: 0 auto;
+}
+
+
+@media (max-width: 1399px) {
+    .wrapper {
+        max-width: 1140px;
+    }
+
+
+    header nav .logo .logo-griff{
+        width: 80%;
+        height: 80%;
+    }
+    header nav .logo .logo-bird{
+        width: 80%;
+        height: 80%;
+    }
+    header nav .contacts > p {
+        font-size: 1.5rem;
+    }
+    header nav .contacts .yellow-block {
+        font-size: 1rem;
+    }
+    header nav .links > a:last-child {
+        display: none;
+    }
+
+
+    .coaches .coach .coach-photo {
+        width: 300px;
+        height: 400px;
+    }
+    .coaches .coach > p {
+        width: 300px;
+    }
+    .coaches .coach .hover-group h4 {
+        font-size: 1.7rem;
+        padding: 15px 0;
+    }
+    .coaches .coach .hover-group p {
+        font-size: 1.1rem;
+    }
+}
+
+
+@media (max-width: 1199px) {
+    .wrapper {
+        max-width: 960px;
+    }
+
+    header nav {
+        flex-wrap: wrap;
+    }
+    header nav .contacts {
+        margin-left: 30px;
+        margin-top: 40px;
+    }
+
+
+    .coaches .coach .coach-photo {
+        width: 250px;
+        height: 330px;
+    }
+    .coaches .coach > p {
+        width: 250px;
+    }
+    .coaches .coach .hover-group h4 {
+        font-size: 1.5rem;
+        padding: 15px 0;
+    }
+    .coaches .coach .hover-group:first-child {
+        padding-top: 0;
+    }
+    .coaches .coach .hover-group p {
+        font-size: .9rem;
+    }
+
+
+    .mission .mission-container > img {
+        padding: 40px;
+        width: 50%;
+        height: 60%;
+    }
+
+
+    .directs .all-directs {
+        justify-content: space-around;
+    }
+
+
+    footer .logo > p{
+        font-size: 1.5rem;
+    }
+    footer h3 {
+        font-size: 2rem;
+    }
+    footer .time table {
+        font-size: 1.5rem;
+    }
+    footer .social-icons > img{
+        height: 16%;
+        width: 16%;
+    }
+    footer .contacts-container > p{
+        font-size: 1.5rem;
+    }
+}
+
+
+@media (max-width: 991px) {
+    .wrapper {
+        max-width: 720px;
+    }
+
+
+    .owl-stage {
+        margin-left: 40px;
+    }
+
+
+    html {
+        scroll-behavior: auto;
+    }
+    header nav {
+        flex-wrap: wrap;
+    }
+    header nav .logo .logo-griff {
+        width: 90%;
+        height: 90%;
+    }
+    header nav .logo .logo-bird {
+        width: 90%;
+        height: 90%;
+    }
+    header nav .links {
+        display: none;
+    }
+    header nav .hamburger {
+        display: flex;
+        margin-left: 180px;
+    }
+    header nav .contacts > p{
+        font-size: 2rem;
+    }
+    header nav .contacts .yellow-block {
+        font-size: 1.3rem;
+    }
+    header h1 {
+        font-size: 5rem;
+    }
+    header h3 {
+        font-size: 1.8rem;
+        letter-spacing: normal;
+    }
+
+
+    .bot .manual .step p {
+        font-size: 1.6rem;
+    }
+
+
+    .why .why-container {
+        display: block;
+        margin-left: 40px;
+    }
+    .why .why-container .content {
+        height: 100%;
+        margin-bottom: 80px;
+    }
+
+
+    .mission .mission-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .mission .mission-container .p-container {
+        width: 100%;
+    }
+    .mission .mission-container > img {
+        padding: 0;
+        width: 60%;
+    }
+
+
+    footer .wrapper {
+        flex-wrap: wrap;
+        gap: 4rem 0;
+    }
+    footer .wrapper .logo,
+    footer .wrapper .time {
+        width: 50%;
+    }
+    footer .wrapper .social-media{
+        width: 60%;
+    }
+    footer .time table {
+        font-size: 1.7rem;
+    }
+    footer .social-media {
+        padding-left: 70px !important;
+    }
+    footer .contacts-container > p {
+        font-size: 1.7rem !important;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .wrapper {
+        max-width: 540px;
+    }
+
+
+
+    .bot .owl-two .owl-nav{
+        position: absolute;
+        width: 100%;
+        top: 30%;
+        transform: translateY(-50%);
+    }
+    .bot .owl-two .owl-nav .owl-prev {
+        position: absolute;
+        left: 0;
+    }
+    .bot .owl-two .owl-nav .owl-next {
+        position: absolute;
+        right: 0;
+    }
+    .coaches .owl-stage {
+        margin-left: 145px;
+    }
+    .bot .owl-stage .step {
+        margin-right: 80px;
+    }
+    .bot .owl-two .owl-dots {
+        margin-top: 30px;
+    }
+    .bot {
+        padding-bottom: 0;
+    }
+
+
+    footer .social-media {
+        padding-left: 50px !important;
+        width: 50% !important;
+    }
+    footer .contacts {
+        width: 40% !important;
+    }
+}
+
+
+@media (max-width: 575px) {
+    .wrapper {
+        max-width: 90%;
+    }
+
+
+    .top-button {
+        bottom: 15px;
+        right: 15px;
+    }
+
+
+    #navMobile .wrapper > a {
+        font-size: 2.5rem;
+    }
+    #exit {
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+
+
+    header nav {
+        flex-wrap: wrap;
+        align-items: start;
+        padding-top: 20px;
+    }
+    header nav .logo {
+        width: 50%;
+    }
+    header nav .hamburger {
+        width: 40px;
+        height: 40px;
+        margin-left: 0;
+    }
+    header nav .hamburger .stick {
+        height: 3px;
+    }
+    header nav .contacts {
+        margin-top: 40px;
+        margin-left: 0;
+    }
+    header nav .contacts .yellow-block {
+        padding: 10px 0;
+    }
+    header .signup {
+        padding: 5px 30px;
+        font-size: 1.5rem;
+    }
+    .yellow-block {
+        border-radius: 25px;
+    }
+    header nav .contacts > p {
+        font-size: 1.5rem;
+    }
+    header h1 {
+        letter-spacing: 1.5px;
+        font-size: 3rem;
+        margin-top: 50px;
+    }
+    header h3 {
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+
+
+    .bot .owl-two .owl-nav {
+        top: 27%;
+    }
+
+
+    .why .why-container .content {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        margin-bottom: 40px;
+        width: 90%;
+        height: auto;
+    }
+    .why .content p {
+        font-size: 1.5rem;
+    }
+
+
+    .coaches .owl-stage {
+        margin-left: 50px;
+    }
+    .coaches .owl-one .owl-nav {
+        margin-bottom: 50px;
+    }
+    .coaches .owl-one .owl-nav .owl-prev {
+        margin-right: 40px;
+    }
+
+
+    .mission .mission-container > img {
+        width: 90%;
+    }
+
+
+    .signup-form .title {
+        font-size: 3.5rem;
+    }
+    .signup-form input {
+        width: 100%;
+    }
+
+
+    footer .wrapper {
+        flex-wrap: wrap;
+    }
+    footer .wrapper > div {
+        width: 100% !important;
+    }
+    footer .logo > p {
+        font-size: 1.2rem;
+    }
+    footer .wrapper .time {
+        text-align: center;
+    }
+    footer .wrapper .social-media {
+        text-align: center;
+    }
+    footer .social-icons {
+        margin-left: 30px;
+    }
+    footer .contacts {
+        text-align: center;
+    }
+}
+
+
+@media (min-width: 1400px) {
+    .wrapper {
+        max-width: 1320px;
+    }
+
+
+    .coaches .coach .hover-group {
+        width: 277px !important;
+    }
+}
+/* Много всего разного в одном файле, нужно раскидать всё по файлам.
+ "Так один файл, похуй" с.Максим */
